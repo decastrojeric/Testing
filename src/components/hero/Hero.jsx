@@ -7,7 +7,7 @@ export default function Hero() {
         className="absolute -top-1/2 left-1/2 z-0 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full blur-[140px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(255,185,120,9), rgba(255,185,120,0.15), transparent 70%)",
+            "radial-gradient(circle, rgba(255,185,120,0.9), rgba(255,185,120,0.15), transparent 70%)",
         }}
       />
 
@@ -15,15 +15,16 @@ export default function Hero() {
       <div className="absolute inset-0 z-[1] bg-gradient-to-br from-black via-[#04142c] to-[#020b1f]" />
 
       {/* GRID */}
-      <div className="hidden sm:block absolute inset-0 z-[2]
+      <div
+        className="hidden sm:block absolute inset-0 z-[2]
         bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),
             linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
-        bg-[size:60px_60px] opacity-30" />
+        bg-[size:60px_60px] opacity-30"
+      />
 
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 py-12 text-center">
 
-        {/* LOGO WITH MATCHING BG */}
         <div className="mb-10 rounded-full bg-gradient-to-br from-black via-[#04142c] to-[#020b1f] p-6 shadow-2xl">
           <img
             src="/branding.png"
@@ -44,8 +45,6 @@ export default function Hero() {
 
         <p className="mt-10 max-w-2xl text-base text-gray-300 md:text-lg">
           Immerse yourself in our curated collection of luxury fragrances.
-          From timeless classics to contemporary masterpieces, find the
-          perfect scent for every moment of your life.
         </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-6">
@@ -56,11 +55,6 @@ export default function Hero() {
           <button className="rounded-full border border-yellow-500/40 px-10 py-4 text-yellow-400 hover:bg-yellow-500/10 transition">
             Learn More
           </button>
-        </div>
-
-        <div className="absolute bottom-10 flex flex-col items-center gap-2 text-[11px] tracking-widest text-yellow-500">
-          <span className="hidden sm:inline">SCROLL TO EXPLORE</span>
-          <span className="animate-bounce">⌄</span>
         </div>
       </div>
     </section>
