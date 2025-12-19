@@ -1,61 +1,86 @@
 export default function Hero() {
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative isolate h-[85vh] md:h-screen w-full overflow-hidden bg-[#020b1f]">
+    <section className="relative h-screen w-full overflow-hidden bg-[#020b1f]">
 
-      {/* GOLD AMBIENT LIGHT */}
-      <div
-        className="absolute -top-1/2 left-1/2 z-0 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full blur-[140px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,185,120,0.9), rgba(255,185,120,0.15), transparent 70%)",
-        }}
-      />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#04142c] to-[#020b1f]" />
 
-      {/* HERO GRADIENT */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-black via-[#04142c] to-[#020b1f]" />
+      {/* TOP BAR */}
+      <header className="relative z-20 h-16 w-full border-b border-white/10
+        bg-gradient-to-r from-[#020b1f] via-[#04142c] to-[#020b1f]">
+        
+        <div className="mx-auto flex h-full max-w-7xl items-center px-6">
 
-      {/* GRID */}
-      <div
-        className="hidden sm:block absolute inset-0 z-[2]
-        bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),
-            linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
-        bg-[size:60px_60px] opacity-30"
-      />
+          {/* BRAND TEXT — LEFT */}
+          <div
+            className="mr-auto text-[#f5e6b8] text-xl tracking-wide select-none"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Jeric&apos;s Scents
+          </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 py-12 text-center">
+          {/* NAVIGATION — CENTER/RIGHT */}
+          <nav className="flex gap-12 text-sm font-medium text-gray-300">
+            <button onClick={() => scrollTo("perfume")} className="hover:text-white transition">
+              Collections
+            </button>
+            <button onClick={() => scrollTo("men")} className="hover:text-white transition">
+              Men&apos;s
+            </button>
+            <button onClick={() => scrollTo("women")} className="hover:text-white transition">
+              Women&apos;s
+            </button>
+            <button onClick={() => scrollTo("unisex")} className="hover:text-white transition">
+              Unisex
+            </button>
+          </nav>
 
-        <div className="mb-10 rounded-full bg-gradient-to-br from-black via-[#04142c] to-[#020b1f] p-6 shadow-2xl">
-          <img
-            src="/branding.png"
-            alt="Father and Son"
-            className="w-28 md:w-32"
-            draggable={false}
-          />
         </div>
+      </header>
 
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-yellow-500/40 px-6 py-2 text-sm text-yellow-400">
-          ✨ Premium Fragrance Experience
-        </div>
-
-        <h1 className="font-serif text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+      {/* HERO BODY */}
+      <div
+        className="
+          relative z-10
+          mx-auto max-w-5xl
+          h-[calc(100vh-4rem)]
+          flex flex-col items-center justify-center
+          px-6 text-center
+          translate-y-[6vh] md:translate-y-[7vh]
+        "
+      >
+        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-extrabold">
           <span className="block text-[#f5f3eb]">Discover Your</span>
           <span className="block text-yellow-500">Signature Scent</span>
         </h1>
 
-        <p className="mt-10 max-w-2xl text-base text-gray-300 md:text-lg">
+        <p className="mt-6 max-w-2xl text-gray-300">
           Immerse yourself in our curated collection of luxury fragrances.
         </p>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-6">
-          <button className="rounded-full bg-orange-500 px-10 py-4 font-medium text-white shadow-lg shadow-orange-500/40 hover:bg-orange-400 transition">
-            Explore Collections
-          </button>
+        <a
+          href="#perfume"
+          className="mt-8 rounded-full bg-orange-500 px-10 py-4 text-white shadow-lg transition hover:bg-orange-400"
+        >
+          Explore Collections
+        </a>
 
-          <button className="rounded-full border border-yellow-500/40 px-10 py-4 text-yellow-400 hover:bg-yellow-500/10 transition">
-            Learn More
-          </button>
-        </div>
+        {/* SCROLL TO EXPLORE */}
+        <button
+          onClick={() => scrollTo("perfume")}
+          className="mt-10 flex flex-col items-center gap-2 text-yellow-400 opacity-80 hover:opacity-100 transition"
+        >
+          <span className="text-xs tracking-[0.35em]">
+            SCROLL TO EXPLORE
+          </span>
+          <span className="text-2xl animate-bounce">↓</span>
+        </button>
+
       </div>
     </section>
   );
