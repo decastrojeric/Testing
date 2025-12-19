@@ -52,7 +52,7 @@ export default function Hero() {
 
       {/* HERO */}
       <div className="relative z-10 flex h-[calc(100vh-5rem)] flex-col items-center justify-center px-6 text-center">
-
+         
         {/* TOP LINE + ICON */}
         <div className="mb-2 flex items-center justify-center gap-4">
           <div className="h-px w-20 bg-[#d6b46c]" />

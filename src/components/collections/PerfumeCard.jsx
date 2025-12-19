@@ -1,6 +1,14 @@
 export default function PerfumeCard({ perfume }) {
   return (
-    <div className="group relative cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1c36] via-[#06142a] to-[#020b1f] p-6 shadow-2xl transition hover:-translate-y-2">
+    <div
+      className="
+        group relative cursor-pointer overflow-hidden rounded-3xl
+        bg-gradient-to-br from-[#0a1c36] via-[#06142a] to-[#020b1f]
+        p-6 shadow-2xl transition
+        hover:-translate-y-2
+        hover:shadow-[0_0_45px_rgba(214,180,108,0.6)]
+      "
+    >
       <div className="relative mb-6 h-52 w-full overflow-hidden rounded-2xl">
         <img
           src={perfume.image}
@@ -17,6 +25,7 @@ export default function PerfumeCard({ perfume }) {
       <h3 className="text-center text-lg font-serif text-[#f5f3eb]">
         {perfume.name}
       </h3>
+
       <p className="mt-2 text-center text-sm text-[#b8b3a1]">
         {perfume.description}
       </p>

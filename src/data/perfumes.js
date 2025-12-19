@@ -1,5 +1,5 @@
 export const perfumes = [
-  // MEN (12)
+  // MEN
   {
     id: 1,
     name: "Dior Sauvage EDP",
@@ -7,7 +7,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/dior sauvage.png",
     hoverImage: "/images/perfumes/hover dior.png",
-    bestSuit: ["Date Night", "Versatile"],
+    bestSuit: ["Date Night"],
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/ysl.png",
     hoverImage: "/images/perfumes/hover ysl.png",
-    bestSuit: ["Date Night", "Versatile"],
+    bestSuit: ["Date Night"],
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/invictus.png",
     hoverImage: "/images/perfumes/hover invictus.png",
-    bestSuit: ["Party & Event", "Summer"],
+    bestSuit: ["Party & Events"],
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/eros.png",
     hoverImage: "/images/perfumes/hover eros.png",
-    bestSuit: ["Party & Event"],
+    bestSuit: ["Party & Events"],
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/jpg.png",
     hoverImage: "/images/perfumes/hover jpg.png",
-    bestSuit: ["Party & Event", "Date Night"],
+    bestSuit: ["Party & Events"],
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/home.png",
     hoverImage: "/images/perfumes/hover home.png",
-    bestSuit: ["Rainy & Cold", "Special Occasion"],
+    bestSuit: ["Rainy & Cold"],
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/bleu de chanel.png",
     hoverImage: "/images/perfumes/hover bdc.png",
-    bestSuit: ["Special Occasion", "Versatile"],
+    bestSuit: ["Special Occasion"],
   },
   {
     id: 8,
@@ -106,10 +106,10 @@ export const perfumes = [
     category: "men",
     image: "/images/perfumes/noir.png",
     hoverImage: "/images/perfumes/hover noir.png",
-    bestSuit: ["Date Night", "Versatile"],
+    bestSuit: ["Versatile"],
   },
 
-  // WOMEN (2)
+  // WOMEN
   {
     id: 13,
     name: "Chanel Coco Mademoiselle",
@@ -117,7 +117,7 @@ export const perfumes = [
     category: "women",
     image: "/images/perfumes/coco.png",
     hoverImage: "/images/perfumes/hover coco.png",
-    bestSuit: ["Date Night", "Special Occasion"],
+    bestSuit: ["Date Night"],
   },
   {
     id: 14,
@@ -126,10 +126,10 @@ export const perfumes = [
     category: "women",
     image: "/images/perfumes/libre.png",
     hoverImage: "/images/perfumes/hover libre.png",
-    bestSuit: ["Special Occasion", "Versatile"],
+    bestSuit: ["Special Occasion"],
   },
 
-  // UNISEX (4)
+  // UNISEX
   {
     id: 15,
     name: "Maison Margiela Replica – Jazz Club",
@@ -137,7 +137,7 @@ export const perfumes = [
     category: "unisex",
     image: "/images/perfumes/rep.png",
     hoverImage: "/images/perfumes/hover rep.png",
-    bestSuit: ["Date Night", "Rainy & Cold"],
+    bestSuit: ["Date Night"],
   },
   {
     id: 16,
@@ -155,7 +155,7 @@ export const perfumes = [
     category: "unisex",
     image: "/images/perfumes/byr.png",
     hoverImage: "/images/perfumes/hover byr.png",
-    bestSuit: ["Summer", "Versatile"],
+    bestSuit: ["Summer"],
   },
   {
     id: 18,
@@ -164,6 +164,6 @@ export const perfumes = [
     category: "unisex",
     image: "/images/perfumes/one.png",
     hoverImage: "/images/perfumes/hover one.png",
-    bestSuit: ["Versatile", "Summer"],
+    bestSuit: ["Versatile"],
   },
 ];
