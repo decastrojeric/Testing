@@ -66,28 +66,51 @@ export default function Hero() {
         </p>
 
         {/* TITLE */}
-        <h1 className="font-serif font-extrabold leading-none">
-          <span className="block text-[42px] md:text-[64px] text-[#f5e6b8]">
-            Discover Your
-          </span>
+        <h1 className="font-serif font-extrabold leading-none text-center">
+  {/* DISCOVER YOUR — WHITE ONLY */}
+  <span className="block text-[42px] md:text-[64px] text-white">
+  Discover Your
+</span>
+
           <span className="block mt-3 text-[72px] md:text-[100px] lg:text-[112px] text-[#f5e6b8] drop-shadow-[0_0_60px_rgba(214,180,108,0.6)]">
             Signature Scent
           </span>
         </h1>
 
         {/* DESCRIPTION */}
-        <p className="mt-10 max-w-2xl text-sm md:text-base text-gray-400 leading-relaxed">
-          Immerse yourself in our curated collection of luxury fragrances,
-          crafted for those who appreciate timeless elegance.
-        </p>
+        <p className="mt-10 max-w-2xl text-sm md:text-base leading-relaxed text-gray-400">
+  Immerse yourself in our curated collection of{" "}
+  <span className="
+    text-transparent bg-clip-text
+    bg-gradient-to-r from-[#f5e6b8] to-[#d6b46c]
+    font-medium
+    drop-shadow-[0_0_12px_rgba(214,180,108,0.6)]
+  ">
+    luxury fragrances
+  </span>
+  , crafted for those who appreciate{" "}
+  <span className="
+    text-transparent bg-clip-text
+    bg-gradient-to-r from-[#d6b46c] to-[#f5e6b8]
+    font-medium
+    drop-shadow-[0_0_10px_rgba(214,180,108,0.5)]
+  ">
+    timeless elegance
+  </span>.
+</p>
 
-        {/* DO NOT CHANGE */}
-        <a
-          href="#perfume"
-          className="mt-14 rounded-full bg-orange-500 px-12 py-4 text-white shadow-xl transition hover:bg-orange-400"
-        >
-          Explore Collections
-        </a>
+
+        <button
+  onClick={() =>
+    document
+      .getElementById("perfume")
+      ?.scrollIntoView({ behavior: "smooth" })
+  }
+  className="mt-14 rounded-full bg-orange-500 px-12 py-4 text-white shadow-xl transition hover:bg-orange-400"
+>
+  Explore Collections
+</button>
+
 
         {/* DO NOT CHANGE */}
         <button

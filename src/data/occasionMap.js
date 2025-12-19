@@ -8,7 +8,7 @@ export const occasionMap = {
     "Narciso Rodriguez Bleu Noir",
   ],
 
-  "Party & Event": [
+  "Party & Events": [
     "Paco Rabanne Invictus",
     "Versace Eros",
     "Jean Paul Gaultier Le Male",

@@ -15,9 +15,7 @@ export default function App() {
   const [selectedPerfume, setSelectedPerfume] = useState(null);
 
   const filteredPerfumes = selectedOccasion
-    ? perfumes.filter((p) =>
-        p.bestSuit.includes(selectedOccasion)
-      )
+    ? perfumes.filter((p) => p.bestSuit.includes(selectedOccasion))
     : [];
 
   return (
@@ -27,19 +25,31 @@ export default function App() {
 
       <ScentFinderButton onClick={() => setOpenFinder(true)} />
 
+      {/* FIND YOUR PERFECT SCENT */}
       <ScentFinderModal
-  open={openFinder}
-  onClose={() => setOpenFinder(false)}
-/>
+        open={openFinder && !selectedOccasion}
+        onClose={() => setOpenFinder(false)}
+        onSelectOccasion={(occasion) => {
+          setSelectedOccasion(occasion);
+        }}
+      />
 
-
+      {/* OCCASION VIEW */}
       <OccasionModal
         occasion={selectedOccasion}
         perfumes={filteredPerfumes}
-        onBack={() => setSelectedOccasion(null)}
+        onBack={() => {
+          setSelectedOccasion(null);
+          setOpenFinder(true);
+        }}
+        onClose={() => {
+          setSelectedOccasion(null);
+          setOpenFinder(false);
+        }}
         onSelectPerfume={setSelectedPerfume}
       />
 
+      {/* PERFUME DETAILS */}
       <PerfumeDetailModal
         perfume={selectedPerfume}
         occasion={selectedOccasion}

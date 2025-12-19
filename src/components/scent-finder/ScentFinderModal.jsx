@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { perfumes } from "../../data/perfumes";
-
-export default function ScentFinderModal({ open, onClose }) {
-  const [selectedEvent, setSelectedEvent] = useState(null);
-
+export default function ScentFinderModal({
+  open,
+  onClose,
+  onSelectOccasion,
+}) {
   if (!open) return null;
 
   const events = [
@@ -15,134 +14,55 @@ export default function ScentFinderModal({ open, onClose }) {
     { label: "Versatile", icon: "✨", gradient: "from-emerald-500 to-teal-600" },
   ];
 
-  const eventPerfumeMap = {
-    "Date Night": ["Dior Sauvage", "YSL Y", "Chanel Coco", "Jazz Club"],
-    "Party & Events": ["Paco Rabanne", "Versace Eros", "Jean Paul Gaultier Le Male"],
-    "Rainy & Cold": ["Dior Homme", "By the Fireplace"],
-    "Special Occasion": ["Bleu de Chanel", "YSL Libre"],
-    Summer: ["Acqua di Gio", "Dolce", "Byredo"],
-    Versatile: ["Prada Luna", "Montblanc Explorer", "CK One", "Narciso Rodriguez"],
-  };
-
-  const filteredPerfumes = selectedEvent
-    ? perfumes.filter((p) =>
-        eventPerfumeMap[selectedEvent]?.some((name) =>
-          p.name.toLowerCase().includes(name.toLowerCase())
-        )
-      )
-    : [];
-
-  const centerItems = filteredPerfumes.length <= 3;
-
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center">
-      {/* BACKDROP */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* MODAL */}
-      <div className="relative z-10 w-full max-w-5xl rounded-2xl bg-gradient-to-b from-[#0b1c33] to-[#06142a] p-10 shadow-2xl border border-white/10">
-        {/* CLOSE */}
+      <div className="relative z-10 w-full max-w-5xl rounded-3xl
+        bg-gradient-to-b from-[#0b1c33] to-[#06142a]
+        p-12 border border-white/10 shadow-2xl">
+
+        {/* EXIT BUTTON */}
         <button
           onClick={onClose}
-          className="absolute right-6 top-6 text-yellow-400 text-xl hover:scale-110 transition"
+          className="
+            absolute right-8 top-8 text-yellow-400 text-xl
+            transition hover:text-yellow-300
+            hover:drop-shadow-[0_0_12px_rgba(214,180,108,0.9)]
+          "
         >
           ✕
         </button>
 
-        {/* EVENTS */}
-        {!selectedEvent && (
-          <>
-            <div className="text-center mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-[#f5e6b8]">
-                Find Your Perfect Scent
-              </h2>
-              <p className="mt-2 text-sm text-gray-400">
-                Select an occasion to discover matching fragrances
-              </p>
-            </div>
+        {/* TITLE */}
+        <div className="text-center mb-12">
+          <p className="text-xs tracking-[0.45em] uppercase text-[#d6b46c]">
+            Find Your Perfect Scent
+          </p>
+          <h2 className="mt-3 font-serif text-3xl text-[#f5e6b8]">
+            Choose an Occasion
+          </h2>
+        </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {events.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => setSelectedEvent(item.label)}
-                  className={`h-28 rounded-xl bg-gradient-to-r ${item.gradient}
-                    flex flex-col items-center justify-center gap-2
-                    text-white font-medium shadow-lg transition hover:scale-105`}
-                >
-                  <span className="text-2xl">{item.icon}</span>
-                  <span className="text-sm tracking-wide">{item.label}</span>
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-
-        {/* PERFUMES */}
-        {selectedEvent && (
-          <>
-            <div className="mb-8">
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="text-sm text-yellow-400 hover:underline"
-              >
-                ← Back to occasions
-              </button>
-
-              <h3 className="mt-4 font-serif text-2xl text-[#f5e6b8]">
-                {selectedEvent}
-              </h3>
-              <p className="text-sm text-gray-400">
-                {filteredPerfumes.length} best-suited fragrances
-              </p>
-            </div>
-
-            {/* CENTER IF 2–3 ITEMS */}
-            <div
-              className={
-                centerItems
-                  ? "flex flex-wrap justify-center gap-6"
-                  : "grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-              }
+        {/* OPTIONS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {events.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => onSelectOccasion(item.label)}
+              className={`h-28 rounded-xl bg-gradient-to-r ${item.gradient}
+                flex flex-col items-center justify-center gap-2
+                text-white font-medium shadow-lg
+                transition hover:scale-105`}
             >
-              {filteredPerfumes.map((perfume) => (
-                <div
-                  key={perfume.id}
-                  className="
-                    group w-[220px] rounded-2xl bg-[#04142c] p-4
-                    transition-all duration-300 ease-out
-                    hover:-translate-y-1 hover:scale-[1.04]
-                    hover:shadow-[0_0_28px_rgba(245,230,184,0.5)]
-                    hover:ring-1 hover:ring-[#f5e6b8]/60
-                  "
-                >
-                  <div className="h-40 w-full rounded-xl bg-black/40 flex items-center justify-center overflow-hidden">
-                    <img
-                      src={perfume.hoverImage}
-                      alt={perfume.name}
-                      className="
-                        h-full object-contain
-                        transition duration-300
-                        group-hover:scale-105
-                      "
-                    />
-                  </div>
-
-                  <h4 className="mt-4 text-sm font-serif text-[#f5e6b8] text-center">
-                    {perfume.name}
-                  </h4>
-
-                  <p className="mt-1 text-xs text-gray-400 text-center line-clamp-2">
-                    {perfume.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+              <span className="text-2xl">{item.icon}</span>
+              <span className="text-sm tracking-wide">{item.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

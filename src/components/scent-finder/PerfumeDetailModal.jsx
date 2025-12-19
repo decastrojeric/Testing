@@ -2,48 +2,95 @@ export default function PerfumeDetailModal({ perfume, occasion, onBack }) {
   if (!perfume) return null;
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center">
+    <div className="fixed inset-0 z-[220] flex items-center justify-center">
+      {/* BACKDROP */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onBack}
       />
 
-      <div className="relative z-10 w-full max-w-5xl rounded-3xl
-        bg-gradient-to-b from-[#0a1c36] to-[#04142c]
-        p-12 shadow-2xl border border-white/10">
-
+      {/* MODAL CARD (NOT FULLSCREEN) */}
+      <div
+        className="
+          relative z-10
+          w-full max-w-5xl
+          max-h-[85vh]
+          overflow-y-auto
+          rounded-3xl
+          bg-gradient-to-br from-[#061a33] via-[#04162c] to-[#020b1a]
+          border border-white/10
+          shadow-[0_40px_120px_rgba(0,0,0,0.8)]
+          p-12
+        "
+      >
+        {/* BACK BUTTON */}
         <button
           onClick={onBack}
-          className="text-sm text-yellow-400 hover:underline"
+          className="
+            mb-8 inline-flex items-center gap-2
+            text-yellow-400 text-sm
+            transition
+            hover:text-yellow-300
+            hover:drop-shadow-[0_0_10px_rgba(214,180,108,0.9)]
+          "
         >
           ← Back to fragrances
         </button>
 
-        <div className="mt-10 grid md:grid-cols-2 gap-12 items-center">
+        {/* CONTENT */}
+        <div className="grid md:grid-cols-2 gap-14 items-center">
           {/* IMAGE */}
-          <div className="rounded-2xl overflow-hidden bg-black/40">
+          <div className="h-[420px] rounded-2xl bg-black/40 flex items-center justify-center">
             <img
-              src={perfume.image}
+              src={perfume.hoverImage}
               alt={perfume.name}
-              className="w-full h-[380px] object-contain"
+              className="h-full object-contain"
             />
           </div>
 
-          {/* INFO */}
+          {/* DETAILS */}
           <div>
-            <h2 className="font-serif text-3xl text-[#f5e6b8]">
+            <h2 className="font-serif text-4xl text-[#f5e6b8]">
               {perfume.name}
             </h2>
 
-            <p className="mt-4 text-gray-400">
+            <span
+              className="
+                inline-block mt-4 px-4 py-1 text-xs rounded-full
+                bg-yellow-500/10 text-yellow-300
+                border border-yellow-400/20
+              "
+            >
+              Best for {occasion}
+            </span>
+
+            <p className="mt-6 text-gray-300 leading-relaxed">
               {perfume.description}
             </p>
 
-            <div className="mt-6">
-              <span className="inline-block rounded-full
-                bg-yellow-500/10 px-4 py-1 text-xs text-yellow-300">
-                Best for {occasion}
-              </span>
+            {/* OPTIONAL NOTES SECTION (DESIGN MATCH SA IMAGE) */}
+            <div className="mt-10">
+              <h4 className="font-serif text-lg text-[#f5e6b8] mb-4">
+                Scent Notes
+              </h4>
+
+              <ul className="space-y-4 text-sm text-gray-400">
+                <li>
+                  <span className="text-yellow-400">✦</span>{" "}
+                  <strong className="text-gray-200">Top Notes:</strong>{" "}
+                  Bergamot, Pepper
+                </li>
+                <li>
+                  <span className="text-yellow-400">✦</span>{" "}
+                  <strong className="text-gray-200">Middle Notes:</strong>{" "}
+                  Lavender, Sichuan Pepper, Elemi
+                </li>
+                <li>
+                  <span className="text-yellow-400">✦</span>{" "}
+                  <strong className="text-gray-200">Base Notes:</strong>{" "}
+                  Ambroxan, Cedar, Labdanum
+                </li>
+              </ul>
             </div>
           </div>
         </div>
