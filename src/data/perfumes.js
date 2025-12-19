@@ -41,6 +41,8 @@ export const perfumes = [
     name: "Jean Paul Gaultier Le Male",
     description: "Warm vanilla with timeless masculinity.",
     category: "men",
+    image: "/images/perfumes/jpg.png",
+    hoverImage: "/images/perfumes/hover jpg.png",
     bestSuit: ["Party & Event", "Date Night"],
   },
   {
@@ -48,6 +50,8 @@ export const perfumes = [
     name: "Dior Homme Intense",
     description: "Deep iris and woody notes for cold weather.",
     category: "men",
+    image: "/images/perfumes/home.png",
+    hoverImage: "/images/perfumes/hover home.png",
     bestSuit: ["Rainy & Cold", "Special Occasion"],
   },
   {
@@ -55,6 +59,8 @@ export const perfumes = [
     name: "Bleu de Chanel Parfum",
     description: "Elegant woody-aromatic fragrance.",
     category: "men",
+    image: "/images/perfumes/bleu de chanel.png",
+    hoverImage: "/images/perfumes/hover bdc.png",
     bestSuit: ["Special Occasion", "Versatile"],
   },
   {
@@ -62,6 +68,8 @@ export const perfumes = [
     name: "Acqua di Gio Profondo",
     description: "Fresh marine scent perfect for hot days.",
     category: "men",
+    image: "/images/perfumes/Aqua.png",
+    hoverImage: "/images/perfumes/hover aqua.png",
     bestSuit: ["Summer"],
   },
   {
@@ -69,6 +77,8 @@ export const perfumes = [
     name: "Dolce & Gabbana Light Blue Pour Homme",
     description: "Crisp citrus fragrance for summer wear.",
     category: "men",
+    image: "/images/perfumes/dolce.png",
+    hoverImage: "/images/perfumes/hover dolce.png",
     bestSuit: ["Summer"],
   },
   {
@@ -76,6 +86,8 @@ export const perfumes = [
     name: "Prada Luna Rossa Carbon",
     description: "Modern mineral freshness for everyday use.",
     category: "men",
+    image: "/images/perfumes/prada.png",
+    hoverImage: "/images/perfumes/hover prada.png",
     bestSuit: ["Versatile"],
   },
   {
@@ -83,6 +95,8 @@ export const perfumes = [
     name: "Montblanc Explorer",
     description: "Woody aromatic scent for daily confidence.",
     category: "men",
+    image: "/images/perfumes/hover mont.png",
+    hoverImage: "/images/perfumes/mont.png",
     bestSuit: ["Versatile"],
   },
   {
@@ -90,6 +104,8 @@ export const perfumes = [
     name: "Narciso Rodriguez Bleu Noir",
     description: "Dark musky elegance with modern edge.",
     category: "men",
+    image: "/images/perfumes/noir.png",
+    hoverImage: "/images/perfumes/hover noir.png",
     bestSuit: ["Date Night", "Versatile"],
   },
 
@@ -99,6 +115,8 @@ export const perfumes = [
     name: "Chanel Coco Mademoiselle",
     description: "Elegant floral scent with refined femininity.",
     category: "women",
+    image: "/images/perfumes/coco.png",
+    hoverImage: "/images/perfumes/hover coco.png",
     bestSuit: ["Date Night", "Special Occasion"],
   },
   {
@@ -106,6 +124,8 @@ export const perfumes = [
     name: "YSL Libre Eau de Parfum",
     description: "Bold floral lavender fragrance.",
     category: "women",
+    image: "/images/perfumes/libre.png",
+    hoverImage: "/images/perfumes/hover libre.png",
     bestSuit: ["Special Occasion", "Versatile"],
   },
 
@@ -115,6 +135,8 @@ export const perfumes = [
     name: "Maison Margiela Replica – Jazz Club",
     description: "Warm rum and tobacco for intimate evenings.",
     category: "unisex",
+    image: "/images/perfumes/rep.png",
+    hoverImage: "/images/perfumes/hover rep.png",
     bestSuit: ["Date Night", "Rainy & Cold"],
   },
   {
@@ -122,6 +144,8 @@ export const perfumes = [
     name: "Maison Margiela Replica – By the Fireplace",
     description: "Smoky woody comfort for cold weather.",
     category: "unisex",
+    image: "/images/perfumes/fire.png",
+    hoverImage: "/images/perfumes/hover fire.png",
     bestSuit: ["Rainy & Cold"],
   },
   {
@@ -129,6 +153,8 @@ export const perfumes = [
     name: "Byredo Gypsy Water",
     description: "Fresh woody citrus scent for all seasons.",
     category: "unisex",
+    image: "/images/perfumes/byr.png",
+    hoverImage: "/images/perfumes/hover byr.png",
     bestSuit: ["Summer", "Versatile"],
   },
   {
@@ -136,6 +162,8 @@ export const perfumes = [
     name: "Calvin Klein CK One",
     description: "Clean citrus scent for everyday use.",
     category: "unisex",
+    image: "/images/perfumes/one.png",
+    hoverImage: "/images/perfumes/hover one.png",
     bestSuit: ["Versatile", "Summer"],
   },
 ];
