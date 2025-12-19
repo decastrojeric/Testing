@@ -6,25 +6,45 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#020b1f]">
-
       {/* BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#04142c] to-[#020b1f]" />
 
-      {/* TOP BAR */}
-      <header className="relative z-20 h-16 w-full border-b border-white/10
-        bg-gradient-to-r from-[#020b1f] via-[#04142c] to-[#020b1f]">
-        
+      {/* NAVBAR */}
+      <header className="relative z-20 h-20 w-full bg-[#04142c] border-b border-white/10">
         <div className="mx-auto flex h-full max-w-7xl items-center px-6">
 
-          {/* BRAND TEXT — LEFT */}
-          <div
-            className="mr-auto text-[#f5e6b8] text-xl tracking-wide select-none"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Jeric&apos;s Scents
+          {/* TEXT LOGO */}
+          <div className="mr-auto flex h-full items-center">
+            <div className="leading-none">
+              <span
+                className="
+                  block
+                  font-serif
+                  text-[22px]
+                  tracking-[0.35em]
+                  uppercase
+                  font-semibold
+                  text-[#f5f3eb]
+                "
+              >
+                Jeric’s
+              </span>
+              <span
+                className="
+                  block
+                  font-serif
+                  text-[12px]
+                  tracking-[0.55em]
+                  uppercase
+                  text-yellow-500
+                "
+              >
+                Scents
+              </span>
+            </div>
           </div>
 
-          {/* NAVIGATION — CENTER/RIGHT */}
+          {/* NAVIGATION */}
           <nav className="flex gap-12 text-sm font-medium text-gray-300">
             <button onClick={() => scrollTo("perfume")} className="hover:text-white transition">
               Collections
@@ -48,10 +68,10 @@ export default function Hero() {
         className="
           relative z-10
           mx-auto max-w-5xl
-          h-[calc(100vh-4rem)]
+          h-[calc(100vh-5rem)]
           flex flex-col items-center justify-center
           px-6 text-center
-          translate-y-[6vh] md:translate-y-[7vh]
+          translate-y-[6vh]
         "
       >
         <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-extrabold">
@@ -70,7 +90,7 @@ export default function Hero() {
           Explore Collections
         </a>
 
-        {/* SCROLL TO EXPLORE */}
+        {/* SCROLL */}
         <button
           onClick={() => scrollTo("perfume")}
           className="mt-10 flex flex-col items-center gap-2 text-yellow-400 opacity-80 hover:opacity-100 transition"
@@ -80,7 +100,7 @@ export default function Hero() {
           </span>
           <span className="text-2xl animate-bounce">↓</span>
         </button>
-
+      
       </div>
     </section>
   );

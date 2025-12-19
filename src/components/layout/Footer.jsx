@@ -12,7 +12,7 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <h3 className="mb-4 font-serif text-lg text-[#f5e6b8]">
-              Father and Son
+              Jeric's Scents
             </h3>
 
             <p className="max-w-xs text-sm leading-relaxed text-[#9fa6b2]">
@@ -52,7 +52,7 @@ export default function Footer() {
                 "Men's Collection",
                 "Women's Collection",
                 "Unisex Collection",
-                "Limited Editions",
+                
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -75,8 +75,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 "FAQs",
-                "Shipping Info",
-                "Returns & Exchanges",
+                
+                
                 "Privacy Policy",
                 "Terms of Service",
               ].map((item) => (
@@ -101,7 +101,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-center gap-3">
                 <span className="text-[#d6b46c]">✉</span>
-                info@fatherandson.com
+                info@jericsscents.com
               </li>
 
               <li className="flex items-center gap-3">
@@ -112,8 +112,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <span className="mt-1 text-[#d6b46c]">📍</span>
                 <span>
-                  123 Fragrance Avenue <br />
-                  New York, NY 10001
+                  123 Lemery,Batangas 
+                  
                 </span>
               </li>
             </ul>
@@ -135,11 +135,11 @@ export default function Footer() {
         "
       >
         <span>
-          Made with <span className="text-[#d6b46c]">♥</span> by Father and Son
+          Made with <span className="text-[#d6b46c]">♥</span> by Jeric's Scents
         </span>
 
         <span>
-          © {new Date().getFullYear()} Father and Son. All rights reserved.
+          © {new Date().getFullYear()} Jeric's Scents. All rights reserved.
         </span>
       </div>
     </footer>
