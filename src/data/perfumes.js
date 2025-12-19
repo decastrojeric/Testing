@@ -1,26 +1,141 @@
-export const perfumeCollections = {
-  perfume: Array.from({ length: 18 }, (_, i) => ({
-    id: i,
-    name: `Signature No. ${i + 1}`,
-    description: "Elegant and timeless fragrance composition.",
-    bestSuit: ["Date Night", "Special Occasion", "Versatile"] // Example, adjust as needed
-  })),
-  men: Array.from({ length: 11 }, (_, i) => ({
-    id: i + 18,
-    name: `Men's Essence ${i + 1}`,
-    description: "Bold and sophisticated masculine scent.",
-    bestSuit: ["Party & Event", "Versatile", "Summer"]
-  })),
-  women: Array.from({ length: 2 }, (_, i) => ({
-    id: i + 29,
-    name: `Women's Bloom ${i + 1}`,
-    description: "Delicate and feminine floral notes.",
-    bestSuit: ["Date Night", "Special Occasion"]
-  })),
-  unisex: Array.from({ length: 4 }, (_, i) => ({
-    id: i + 31,
-    name: `Unisex Aura ${i + 1}`,
-    description: "Versatile and modern fragrance for all.",
-    bestSuit: ["Rainy & Cold", "Summer", "Versatile"]
-  }))
-};
+export const perfumes = [
+  // MEN (12)
+  {
+    id: 1,
+    name: "Dior Sauvage EDP",
+    description: "Fresh, spicy and confident masculine scent.",
+    category: "men",
+    image: "/images/perfumes/dior sauvage.png",
+    hoverImage: "/images/perfumes/hover dior.png",
+    bestSuit: ["Date Night", "Versatile"],
+  },
+  {
+    id: 2,
+    name: "YSL Y Eau de Parfum",
+    description: "Clean aromatic fragrance with modern appeal.",
+    category: "men",
+    image: "/images/perfumes/ysl.png",
+    hoverImage: "/images/perfumes/hover ysl.png",
+    bestSuit: ["Date Night", "Versatile"],
+  },
+  {
+    id: 3,
+    name: "Paco Rabanne Invictus",
+    description: "Fresh aquatic scent with bold energy.",
+    category: "men",
+    image: "/images/perfumes/invictus.png",
+    hoverImage: "/images/perfumes/hover invictus.png",
+    bestSuit: ["Party & Event", "Summer"],
+  },
+  {
+    id: 4,
+    name: "Versace Eros",
+    description: "Sweet and powerful fragrance for nightlife.",
+    category: "men",
+    image: "/images/perfumes/eros.png",
+    hoverImage: "/images/perfumes/hover eros.png",
+    bestSuit: ["Party & Event"],
+  },
+  {
+    id: 5,
+    name: "Jean Paul Gaultier Le Male",
+    description: "Warm vanilla with timeless masculinity.",
+    category: "men",
+    bestSuit: ["Party & Event", "Date Night"],
+  },
+  {
+    id: 6,
+    name: "Dior Homme Intense",
+    description: "Deep iris and woody notes for cold weather.",
+    category: "men",
+    bestSuit: ["Rainy & Cold", "Special Occasion"],
+  },
+  {
+    id: 7,
+    name: "Bleu de Chanel Parfum",
+    description: "Elegant woody-aromatic fragrance.",
+    category: "men",
+    bestSuit: ["Special Occasion", "Versatile"],
+  },
+  {
+    id: 8,
+    name: "Acqua di Gio Profondo",
+    description: "Fresh marine scent perfect for hot days.",
+    category: "men",
+    bestSuit: ["Summer"],
+  },
+  {
+    id: 9,
+    name: "Dolce & Gabbana Light Blue Pour Homme",
+    description: "Crisp citrus fragrance for summer wear.",
+    category: "men",
+    bestSuit: ["Summer"],
+  },
+  {
+    id: 10,
+    name: "Prada Luna Rossa Carbon",
+    description: "Modern mineral freshness for everyday use.",
+    category: "men",
+    bestSuit: ["Versatile"],
+  },
+  {
+    id: 11,
+    name: "Montblanc Explorer",
+    description: "Woody aromatic scent for daily confidence.",
+    category: "men",
+    bestSuit: ["Versatile"],
+  },
+  {
+    id: 12,
+    name: "Narciso Rodriguez Bleu Noir",
+    description: "Dark musky elegance with modern edge.",
+    category: "men",
+    bestSuit: ["Date Night", "Versatile"],
+  },
+
+  // WOMEN (2)
+  {
+    id: 13,
+    name: "Chanel Coco Mademoiselle",
+    description: "Elegant floral scent with refined femininity.",
+    category: "women",
+    bestSuit: ["Date Night", "Special Occasion"],
+  },
+  {
+    id: 14,
+    name: "YSL Libre Eau de Parfum",
+    description: "Bold floral lavender fragrance.",
+    category: "women",
+    bestSuit: ["Special Occasion", "Versatile"],
+  },
+
+  // UNISEX (4)
+  {
+    id: 15,
+    name: "Maison Margiela Replica – Jazz Club",
+    description: "Warm rum and tobacco for intimate evenings.",
+    category: "unisex",
+    bestSuit: ["Date Night", "Rainy & Cold"],
+  },
+  {
+    id: 16,
+    name: "Maison Margiela Replica – By the Fireplace",
+    description: "Smoky woody comfort for cold weather.",
+    category: "unisex",
+    bestSuit: ["Rainy & Cold"],
+  },
+  {
+    id: 17,
+    name: "Byredo Gypsy Water",
+    description: "Fresh woody citrus scent for all seasons.",
+    category: "unisex",
+    bestSuit: ["Summer", "Versatile"],
+  },
+  {
+    id: 18,
+    name: "Calvin Klein CK One",
+    description: "Clean citrus scent for everyday use.",
+    category: "unisex",
+    bestSuit: ["Versatile", "Summer"],
+  },
+];
