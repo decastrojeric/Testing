@@ -32,13 +32,15 @@ export default function CollectionSection() {
               <div className="mx-auto mt-4 h-[2px] w-24 bg-gradient-to-r from-transparent via-[#d6b46c] to-transparent" />
             </div>
 
-            <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-10 items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {/* WOMENS — 2 ITEMS, COLUMNS 2–3 */}
               {isWomen &&
-                items.map((perfume) => (
+                items.map((perfume, index) => (
                   <div
                     key={perfume.id}
-                    className="lg:col-span-1 lg:col-start-2 even:lg:col-start-3"
+                    className={`lg:col-span-1 ${
+                      index === 0 ? "lg:col-start-2" : "lg:col-start-3"
+                    }`}
                   >
                     <PerfumeCard perfume={perfume} />
                   </div>
@@ -59,7 +61,8 @@ export default function CollectionSection() {
                       index === 0 ? "lg:col-start-2" : "lg:col-start-3"
                     }`}
                   >
-                    <PerfumeCard perfume={perfume} />
+                    {/* Force the last two perfumes to share the same (larger) image height */}
+                    <PerfumeCard perfume={perfume} largeImage={true} />
                   </div>
                 ))}
 

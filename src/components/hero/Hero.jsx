@@ -53,11 +53,11 @@ export default function Hero() {
       {/* HERO */}
       <div className="relative z-10 flex h-[calc(100vh-5rem)] flex-col items-center justify-center px-6 text-center">
          
-        {/* TOP LINE + ICON */}
-        <div className="mb-2 flex items-center justify-center gap-4">
-          <div className="h-px w-20 bg-[#d6b46c]" />
+        {/* TOP LINE + ICON (gradient dividers matching Perfume Collections) */}
+        <div className="mt-6 mb-2 flex items-center justify-center gap-4">
+          <div className="h-[2px] w-20 bg-gradient-to-l from-transparent via-[#d6b46c] to-transparent" />
           <span className="text-[#d6b46c] text-xs">✦</span>
-          <div className="h-px w-20 bg-[#d6b46c]" />
+          <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-[#d6b46c] to-transparent" />
         </div>
 
         {/* EST TEXT */}
@@ -68,11 +68,11 @@ export default function Hero() {
         {/* TITLE */}
         <h1 className="font-serif font-extrabold leading-none text-center">
   {/* DISCOVER YOUR — WHITE ONLY */}
-  <span className="block text-[42px] md:text-[64px] text-white">
+  <span className="block text-[42px] md:text-[64px] text-white drop-shadow-none filter-none font-normal tracking-tight">
   Discover Your
 </span>
 
-          <span className="block mt-3 text-[72px] md:text-[100px] lg:text-[112px] text-[#f5e6b8] drop-shadow-[0_0_60px_rgba(214,180,108,0.6)]">
+          <span className="block mt-3 text-[72px] md:text-[100px] lg:text-[112px] text-[#d6b46c] filter-none drop-shadow-none">
             Signature Scent
           </span>
         </h1>
@@ -115,7 +115,7 @@ export default function Hero() {
         {/* DO NOT CHANGE */}
         <button
           onClick={() => scrollTo("perfume")}
-          className="mt-12 flex flex-col items-center gap-2 text-[#d6b46c] opacity-80 hover:opacity-100 transition"
+          className="mt-8 flex flex-col items-center gap-2 text-[#d6b46c] opacity-80 hover:opacity-100 transition"
         >
           <span className="text-[10px] tracking-[0.45em]">
             SCROLL TO EXPLORE

@@ -13,6 +13,7 @@ export default function App() {
   const [openFinder, setOpenFinder] = useState(false);
   const [selectedOccasion, setSelectedOccasion] = useState(null);
   const [selectedPerfume, setSelectedPerfume] = useState(null);
+  const [detailOccasion, setDetailOccasion] = useState(null);
 
   const filteredPerfumes = selectedOccasion
     ? perfumes.filter((p) => p.bestSuit.includes(selectedOccasion))
@@ -25,36 +26,41 @@ export default function App() {
 
       <ScentFinderButton onClick={() => setOpenFinder(true)} />
 
-      {/* FIND YOUR PERFECT SCENT */}
-      <ScentFinderModal
-        open={openFinder && !selectedOccasion}
-        onClose={() => setOpenFinder(false)}
-        onSelectOccasion={(occasion) => {
-          setSelectedOccasion(occasion);
-        }}
-      />
+      {/* STEP 1 — OCCASION PICKER */}
+      {openFinder && !selectedOccasion && !selectedPerfume && (
+        <ScentFinderModal
+          open
+          onClose={() => setOpenFinder(false)}
+          onSelectOccasion={(occasion) => setSelectedOccasion(occasion)}
+        />
+      )}
 
-      {/* OCCASION VIEW */}
-      <OccasionModal
-        occasion={selectedOccasion}
-        perfumes={filteredPerfumes}
-        onBack={() => {
-          setSelectedOccasion(null);
-          setOpenFinder(true);
-        }}
-        onClose={() => {
-          setSelectedOccasion(null);
-          setOpenFinder(false);
-        }}
-        onSelectPerfume={setSelectedPerfume}
-      />
+      {/* STEP 2 — PERFUME LIST */}
+      {selectedOccasion && !selectedPerfume && (
+        <OccasionModal
+          occasion={selectedOccasion}
+          perfumes={filteredPerfumes}
+          onBack={() => {
+            setSelectedOccasion(null);
+            setOpenFinder(true);
+          }}
+          onSelectPerfume={(p) => {
+            setSelectedPerfume(p);
+            setDetailOccasion(selectedOccasion);
+          }}
+        />
+      )}
 
-      {/* PERFUME DETAILS */}
-      <PerfumeDetailModal
-        perfume={selectedPerfume}
-        occasion={selectedOccasion}
-        onBack={() => setSelectedPerfume(null)}
-      />
+      {/* STEP 3 — PERFUME DETAILS (SCENT NOTES) */}
+      {selectedPerfume && (
+        <PerfumeDetailModal
+          perfume={selectedPerfume}
+          occasion={detailOccasion}
+          onBack={() => {
+            setSelectedPerfume(null);
+          }}
+        />
+      )}
 
       <ScrollToTop />
       <Footer />

@@ -40,24 +40,25 @@ export default function OccasionModal({
           ← Back to occasions
         </button>
 
-        {/* PERFUME GRID — SAME WIDTH AS CHOOSE AN OCCASION */}
+        {/* PERFUME GRID — MATCH CHOOSE AN OCCASION WIDTH; smaller cards for compact view */}
         <div className="mt-12 flex justify-center">
           <div
             className="
               w-full
-              max-w-4xl          /* 👈 MATCH THIS WITH OCCASION GRID */
+              max-w-5xl
               flex flex-wrap
               justify-center
-              gap-8
+              gap-6
 
-              [&>div]:w-[200px] /* scent finder only card size */
+              [&>div]:w-[160px] /* smaller scent finder card size */
             "
           >
-            {perfumes.slice(0, 4).map((p) => (
+            {perfumes.slice(0, 8).map((p) => (
               <PerfumeCard
                 key={p.id}
                 perfume={p}
                 onClick={() => onSelectPerfume(p)}
+                compact={true}
               />
             ))}
           </div>
